@@ -175,7 +175,7 @@ async def consultar_ceis(
 @app.get("/sancoes/cnep", summary="CNEP — Empresas punidas pela Lei Anticorrupção")
 async def consultar_cnep(
     cnpj_cpf: str = Query(..., description="CNPJ ou CPF sem pontuação"),
-    pagina: int = Query(1, ge=1),
+    pagina: int = 1,
 ):
     """
     Consulta o Cadastro Nacional de Empresas Punidas (CNEP).
@@ -201,7 +201,7 @@ async def consultar_cnep(
 @app.get("/sancoes/cepim", summary="CEPIM — Entidades sem fins lucrativos impedidas")
 async def consultar_cepim(
     cnpj: str = Query(..., description="CNPJ sem pontuação"),
-    pagina: int = Query(1, ge=1),
+    pagina: int = 1,
 ):
     """
     Consulta o Cadastro de Entidades Privadas sem Fins Lucrativos Impedidas (CEPIM).
@@ -227,7 +227,7 @@ async def consultar_cepim(
 @app.get("/contratos", summary="Contratos com o Poder Executivo Federal")
 async def consultar_contratos(
     cnpj_cpf: str = Query(..., description="CNPJ ou CPF do fornecedor"),
-    pagina: int = Query(1, ge=1),
+    pagina: int = 1,
 ):
     """
     Retorna contratos celebrados com o Poder Executivo Federal pelo CNPJ/CPF informado.

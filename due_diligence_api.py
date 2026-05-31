@@ -145,7 +145,7 @@ async def consultar_cnpj(cnpj: str):
 @app.get("/sancoes/ceis", summary="CEIS — Empresas e pessoas inidôneas/suspensas")
 async def consultar_ceis(
     cnpj_cpf: str = Query(..., description="CNPJ (14 dígitos) ou CPF (11 dígitos) sem pontuação"),
-    pagina: int = Query(1, ge=1),
+    pagina: int = 1,
 ):
     """
     Consulta o Cadastro Nacional de Empresas Inidôneas e Suspensas (CEIS).
